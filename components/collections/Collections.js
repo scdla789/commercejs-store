@@ -46,7 +46,7 @@ class Collections extends Component {
     const { categories } = this.props;
 
     return (
-      <>
+      <React.Fragment>
         {categories.map(category => (
           <div key={category.id} className="custom-container">
             <div className="row">
@@ -73,7 +73,7 @@ class Collections extends Component {
             </div>
           </div>
         ))}
-      </>
+     </React.Fragment>
     );
   }
 

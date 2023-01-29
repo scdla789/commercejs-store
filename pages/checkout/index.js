@@ -11,6 +11,7 @@ import Root from '../../components/common/Root';
 import AddressForm from '../../components/checkout/common/AddressForm';
 import PaymentDetails from '../../components/checkout/common/PaymentDetails';
 import Loader from '../../components/checkout/Loader';
+import Image from 'next/image'
 import {
   generateCheckoutTokenFromCart as dispatchGenerateCheckout,
   getShippingOptionsForCheckout as dispatchGetShippingOptions,
@@ -555,7 +556,7 @@ class CheckoutPage extends Component {
                     Cart
                   </a>
                 </Link>
-                <img src="/icon/arrow-right.svg" className="w-16 mx-1" alt="Arrow icon"/>
+                <Image src="/icon/arrow-right.svg" className="w-16 mx-1" alt="Arrow icon"/>
                 <div className="font-size-caption font-weight-bold cursor-pointer">
                   Checkout
                 </div>
@@ -745,7 +746,7 @@ class CheckoutPage extends Component {
                         className="d-flex mb-2"
                       >
                         { (item && item.media)
-                          && (<img className="checkout__line-item-image mr-2" src={item.media.source} alt={item.product_name}/>)
+                          && (<Image className="checkout__line-item-image mr-2" src={item.media.source} alt={item.product_name}/>)
                         }
                         <div className="d-flex flex-grow-1">
                           <div className="flex-grow-1">

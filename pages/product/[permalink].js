@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import commerce from '../../lib/commerce';
 import { Collapse } from 'react-collapse';
 import Head from 'next/head';
+import Image from 'next/image';
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router';
 import Root from '../../components/common/Root';
@@ -83,7 +84,7 @@ export default function Product() {
         <div className="product-images">
           <div className="flex-grow-1">
             {Array.isArray(images) ? (images.map((image, i) => (
-              <img
+              <Image
                 key={i}
                 src={image}
                 className="w-100 mb-3 carousel-main-images"
@@ -103,7 +104,7 @@ export default function Product() {
             className="d-flex cursor-pointer py-3 justify-content-between font-weight-medium"
           >
             Shipping and returns
-            <img src="/icon/plus.svg" />
+            <Image src="/icon/plus.svg" />
           </div>
           <Collapse isOpened={showShipping}>
             <div className="pb-4 font-color-medium">
@@ -117,7 +118,7 @@ export default function Product() {
             className="d-flex cursor-pointer py-3 justify-content-between font-weight-medium"
           >
             Details
-            <img src="/icon/plus.svg" />
+            <Image src="/icon/plus.svg" />
           </div>
           <Collapse isOpened={showDetails}>
             <div

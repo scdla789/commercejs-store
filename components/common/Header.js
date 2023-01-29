@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Cart from '../cart/Cart';
 import commerce from '../../lib/commerce';
 import Animation from '../cart/Animation';
@@ -192,20 +193,22 @@ class Header extends Component {
             </Link>
           </div>
           <div className="logo-container">
-            <img
+            <Image
               src={`/icon/${showMobileMenu ? 'cross' : 'menu'}.svg`}
               onClick={this.toggleMobileMenu}
+              layout="fill"
               className="w-32 mr-1 d-block d-sm-none"
               alt="Menu icon"
             />
             <Link href="/">
-              <a>
-                <img
+              {/* <a>
+                <Image
                   src="/images/commerce.svg"
                   className="logo cursor-pointer"
                   alt="Logo"
                 />
-              </a>
+              </a> */}
+              Mistletoe
             </Link>
           </div>
           <div className="d-flex">
@@ -242,11 +245,11 @@ class Header extends Component {
                 }}
               >
                 {mobileMenuLinks.map((item, i) => (
-                  <Link key={i} href={item.link}>
+                   <Link key={i} href={item.link}>
                     <a className="d-block mb-4 font-size-heading font-color-white text-center">
                       {item.name}
                     </a>
-                  </Link>
+                  </Link> 
                 ))}
               </div>
             </div>
